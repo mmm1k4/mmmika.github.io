@@ -28,16 +28,16 @@
                                                                  language === 'cs' ? 'Vítejte v edenhall s.r.o.' :
                                                                  /* language === 'de' ? */ 'Willkommen bei edenhall s.r.o.';
 
-            document.getElementById('home-description').textContent = language === 'en' ? 'Your Digital Innovation Partner' :
-                                                                        language === 'cs' ? 'Váš digitální inovační partner' :
+            document.getElementById('home-description').textContent = language === 'en' ? 'Digital Studio' :
+                                                                        language === 'cs' ? 'Digitální Studio' :
                                                                         /* language === 'de' ? */ 'Ihr digitaler Innovationspartner';
 
             document.getElementById('about-title').textContent = language === 'en' ? 'About Us' :
                                                                  language === 'cs' ? 'O nás' :
                                                                  /* language === 'de' ? */ 'Über uns';
 
-            document.getElementById('about-description').textContent = language === 'en' ? 'We are more than just a startup; we are a team of passionate individuals dedicated to pushing the boundaries of what\'s possible in the digital landscape. Founded with the vision of providing top-notch software solutions, edenhall s.r.o. has evolved into a trusted partner for businesses seeking excellence in technology.' :
-                                                                        language === 'cs' ? 'Jsme více než jen startup; jsme tým vášnivých jednotlivců věnovaných posouvání hranic toho, co je v digitální krajinně možné. Založený s vizí poskytovat prvotřídní softwarová řešení, edenhall s.r.o. se vyvinul v důvěryhodného partnera pro podniky hledající excelenci v technologii.' :
+            document.getElementById('about-description').textContent = language === 'en' ? 'We are more than just a startup; Founded with the vision of providing top-notch software solutions, edenhall s.r.o. has evolving into a trusted partner for businesses seeking excellence in technology.' :
+                                                                        language === 'cs' ? 'Jsme více než jen startup; Založený s vizí poskytovat prvotřídní softwarová řešení, edenhall s.r.o. se vyvinul v důvěryhodného partnera pro podniky hledající excelenci v technologii.' :
                                                                         /* language === 'de' ? */ 'Wir sind mehr als nur ein Startup; wir sind ein Team leidenschaftlicher Individuen, die sich der Erweiterung der Grenzen des Möglichen in der digitalen Landschaft verschrieben haben. Gegründet mit der Vision, erstklassige Softwarelösungen anzubieten, hat sich edenhall s.r.o. zu einem vertrauenswürdigen Partner für Unternehmen entwickelt, die Exzellenz in der Technologie suchen.';
 
             document.getElementById('services-title').textContent = language === 'en' ? 'Digital Studio' :
@@ -69,7 +69,7 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav align="right">
             <ul>
                 <li><a href="javascript:void(0);" onclick="switchLanguage('en')">English</a></li>
                 <li><a href="javascript:void(0);" onclick="switchLanguage('cs')">Čeština</a></li>
@@ -80,14 +80,14 @@
 
     <section id="home">
         <h1 id="home-title">Welcome to edenhall s.r.o.</h1>
-        <p id="home-description">Your Digital Innovation Partner</p>
-        <p>At edenhall s.r.o., we believe in the transformative power of technology. Our mission is to collaborate with businesses of all sizes to create innovative digital solutions that drive success.</p>
+        <p id="home-description">Digital Studio</p>
+        <p>At edenhall s.r.o., we create own products and collaborate with businesses of all sizes to create innovative digital solutions that drive success.</p>
     </section>
 
     <section id="about">
         <h2 id="about-title">About Us</h2>
-        <p id="about-description">We are more than just a startup; we are a team of passionate individuals dedicated to pushing the boundaries of what's possible in the digital landscape. Founded with the vision of providing top-notch software solutions, edenhall s.r.o. has evolved into a trusted partner for businesses seeking excellence in technology.</p>
-        <p>Our values revolve around creativity, collaboration, and customer satisfaction. We take pride in our ability to turn ideas into reality and deliver solutions that stand the test of time.</p>
+        <p id="about-description">We are more than just a startup; Founded with the vision of providingsoftware solutions, edenhall s.r.o. has evolving into a trusted partner for businesses and end users.</p>
+        <p>Our values revolve around creativity, collaboration, and customer satisfaction. We take pride in our ability to turn ideas into reality and deliver solutions.</p>
     </section>
 
     <section id="services">
@@ -98,7 +98,7 @@
             <li><strong>Mobile and Full-Stack Applications:</strong> Expert development for seamless user experiences.</li>
             <li><strong>Digital Transformations:</strong> Innovative strategies to elevate your business in the digital realm.</li>
         </ul>
-        <p>Whether you're a startup or a mid-sized company, we have the expertise to drive your digital success.</p>
+        <p>Whether you're a startup or a mid-sized company, we can help your digital success.</p>
     </section>
 
     <section id="products">
