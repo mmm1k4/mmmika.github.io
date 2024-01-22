@@ -36,7 +36,7 @@
                                                                  language === 'cs' ? 'O nás' :
                                                                  /* language === 'de' ? */ 'Über uns';
 
-            document.getElementById('about-description').textContent = language === 'en' ? 'We are more than just a startup; Founded with the vision of providing top-notch software solutions, edenhall s.r.o. has evolving into a trusted partner for businesses seeking excellence in technology.' :
+            document.getElementById('about-description').textContent = language === 'en' ? 'We are more than just a startup; Founded with the vision of providing software solutions, edenhall s.r.o. has evolved into a trusted partner for businesses and end users.' :
                                                                         language === 'cs' ? 'Jsme více než jen startup; Založený s vizí poskytovat prvotřídní softwarová řešení, edenhall s.r.o. se vyvinul v důvěryhodného partnera pro podniky hledající excelenci v technologii.' :
                                                                         /* language === 'de' ? */ 'Wir sind mehr als nur ein Startup; wir sind ein Team leidenschaftlicher Individuen, die sich der Erweiterung der Grenzen des Möglichen in der digitalen Landschaft verschrieben haben. Gegründet mit der Vision, erstklassige Softwarelösungen anzubieten, hat sich edenhall s.r.o. zu einem vertrauenswürdigen Partner für Unternehmen entwickelt, die Exzellenz in der Technologie suchen.';
 
@@ -69,7 +69,17 @@
 </head>
 <body>
     <header>
-        <nav align="right">
+        <nav id="left-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Digital Studio</a></li>
+                <li><a href="#products">Our Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <nav id="right-menu" align="right">
             <ul>
                 <li><a href="javascript:void(0);" onclick="switchLanguage('en')">English</a></li>
                 <li><a href="javascript:void(0);" onclick="switchLanguage('cs')">Čeština</a></li>
@@ -86,7 +96,7 @@
 
     <section id="about">
         <h2 id="about-title">About Us</h2>
-        <p id="about-description">We are more than just a startup; Founded with the vision of providingsoftware solutions, edenhall s.r.o. has evolving into a trusted partner for businesses and end users.</p>
+        <p id="about-description">We are more than just a startup; Founded with the vision of providing software solutions, edenhall s.r.o. has evolved into a trusted partner for businesses and end users.</p>
         <p>Our values revolve around creativity, collaboration, and customer satisfaction. We take pride in our ability to turn ideas into reality and deliver solutions.</p>
     </section>
 
