@@ -52,3 +52,103 @@ footer {
     text-align: center;
     font-size: 14px;
 }
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em 0;
+}
+
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #88c0d0;
+}
+
+section {
+    padding: 2em;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.8em;
+}
+
+p {
+    color: #555;
+}
+
+footer {
+    background-color: #f8f8f8;
+    padding: 1em 0;
+    text-align: center;
+    color: #333;
+}
+
+.company-info {
+    font-size: 0.8em;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #111;
+    color: #ddd;
+}
+
+header.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+nav a.dark-mode {
+    color: #ddd;
+}
+
+nav a.dark-mode:hover {
+    color: #88c0d0;
+}
+
+footer.dark-mode {
+    background-color: #333;
+    color: #ddd;
+}
