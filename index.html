@@ -17,35 +17,82 @@
     <link rel="stylesheet" href="styles.css">
 
     <!-- Add any additional stylesheets or scripts here -->
+
+    <!-- Add JavaScript for language switching -->
+    <script>
+        function switchLanguage(language) {
+            document.documentElement.lang = language;
+
+            // Replace text content based on the selected language
+            document.getElementById('home-title').textContent = language === 'en' ? 'Welcome to edenhall s.r.o.' : 
+                                                                 language === 'cs' ? 'Vítejte v edenhall s.r.o.' :
+                                                                 /* language === 'de' ? */ 'Willkommen bei edenhall s.r.o.';
+
+            document.getElementById('home-description').textContent = language === 'en' ? 'Your Digital Innovation Partner' :
+                                                                        language === 'cs' ? 'Váš digitální inovační partner' :
+                                                                        /* language === 'de' ? */ 'Ihr digitaler Innovationspartner';
+
+            document.getElementById('about-title').textContent = language === 'en' ? 'About Us' :
+                                                                 language === 'cs' ? 'O nás' :
+                                                                 /* language === 'de' ? */ 'Über uns';
+
+            document.getElementById('about-description').textContent = language === 'en' ? 'We are more than just a startup; we are a team of passionate individuals dedicated to pushing the boundaries of what\'s possible in the digital landscape. Founded with the vision of providing top-notch software solutions, edenhall s.r.o. has evolved into a trusted partner for businesses seeking excellence in technology.' :
+                                                                        language === 'cs' ? 'Jsme více než jen startup; jsme tým vášnivých jednotlivců věnovaných posouvání hranic toho, co je v digitální krajinně možné. Založený s vizí poskytovat prvotřídní softwarová řešení, edenhall s.r.o. se vyvinul v důvěryhodného partnera pro podniky hledající excelenci v technologii.' :
+                                                                        /* language === 'de' ? */ 'Wir sind mehr als nur ein Startup; wir sind ein Team leidenschaftlicher Individuen, die sich der Erweiterung der Grenzen des Möglichen in der digitalen Landschaft verschrieben haben. Gegründet mit der Vision, erstklassige Softwarelösungen anzubieten, hat sich edenhall s.r.o. zu einem vertrauenswürdigen Partner für Unternehmen entwickelt, die Exzellenz in der Technologie suchen.';
+
+            document.getElementById('services-title').textContent = language === 'en' ? 'Digital Studio' :
+                                                                    language === 'cs' ? 'Digitální studio' :
+                                                                    /* language === 'de' ? */ 'Digitalstudio';
+
+            document.getElementById('services-description').textContent = language === 'en' ? 'Unlock the potential of digital innovation with our comprehensive Digital Studio services. From concept to execution, we offer a full spectrum of solutions tailored to your unique needs:' :
+                                                                           language === 'cs' ? 'Odemkněte potenciál digitální inovace s našimi komplexními službami Digitálního studia. Od konceptu po provedení nabízíme širokou škálu řešení přizpůsobených vašim jedinečným potřebám:' :
+                                                                           /* language === 'de' ? */ 'Entfesseln Sie das Potenzial digitaler Innovation mit unseren umfassenden Dienstleistungen im Digitalstudio. Von der Konzeption bis zur Umsetzung bieten wir eine Vielzahl von Lösungen, die auf Ihre individuellen Bedürfnisse zugeschnitten sind:';
+
+            document.getElementById('products-title').textContent = language === 'en' ? 'Our Products' :
+                                                                     language === 'cs' ? 'Naše produkty' :
+                                                                     /* language === 'de' ? */ 'Unsere Produkte';
+
+            document.getElementById('products-description').textContent = language === 'en' ? 'Exciting releases coming soon! Follow our updates on Twitter.' :
+                                                                            language === 'cs' ? 'Brzy přicházejí vzrušující novinky! Sledujte naše aktualizace na Twitteru.' :
+                                                                            /* language === 'de' ? */ 'Aufregende Veröffentlichungen kommen bald! Folgen Sie unseren Updates auf Twitter.';
+
+            document.getElementById('contact-title').textContent = language === 'en' ? 'Contact Us' :
+                                                                    language === 'cs' ? 'Kontaktujte nás' :
+                                                                    /* language === 'de' ? */ 'Kontaktiere uns';
+
+            document.getElementById('footer-text').textContent = language === 'en' ? 'edenhall s.r.o. IČO: 14437341, Jankovcova 1535/2A, Holešovice (Praha 7), 170 00 Praha Czechia EU' :
+                                                                   language === 'cs' ? 'edenhall s.r.o. IČO: 14437341, Jankovcova 1535/2A, Holešovice (Praha 7), 170 00 Praha Czechia EU' :
+                                                                   /* language === 'de' ? */ 'edenhall s.r.o. IČO: 14437341, Jankovcova 1535/2A, Holešovice (Praha 7), 170 00 Praha Czechia EU';
+
+        }
+    </script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#services">Digital Studio</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="javascript:void(0);" onclick="switchLanguage('en')">English</a></li>
+                <li><a href="javascript:void(0);" onclick="switchLanguage('cs')">Čeština</a></li>
+                <li><a href="javascript:void(0);" onclick="switchLanguage('de')">Deutsch</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="home">
-        <h1>Welcome to edenhall s.r.o.</h1>
-        <p>Your Digital Innovation Partner</p>
+        <h1 id="home-title">Welcome to edenhall s.r.o.</h1>
+        <p id="home-description">Your Digital Innovation Partner</p>
         <p>At edenhall s.r.o., we believe in the transformative power of technology. Our mission is to collaborate with businesses of all sizes to create innovative digital solutions that drive success.</p>
     </section>
 
     <section id="about">
-        <h2>About Us</h2>
-        <p>We are more than just a startup; we are a team of passionate individuals dedicated to pushing the boundaries of what's possible in the digital landscape. Founded with the vision of providing top-notch software solutions, edenhall s.r.o. has evolved into a trusted partner for businesses seeking excellence in technology.</p>
+        <h2 id="about-title">About Us</h2>
+        <p id="about-description">We are more than just a startup; we are a team of passionate individuals dedicated to pushing the boundaries of what's possible in the digital landscape. Founded with the vision of providing top-notch software solutions, edenhall s.r.o. has evolved into a trusted partner for businesses seeking excellence in technology.</p>
         <p>Our values revolve around creativity, collaboration, and customer satisfaction. We take pride in our ability to turn ideas into reality and deliver solutions that stand the test of time.</p>
     </section>
 
     <section id="services">
-        <h2>Digital Studio</h2>
-        <p>Unlock the potential of digital innovation with our comprehensive Digital Studio services. From concept to execution, we offer a full spectrum of solutions tailored to your unique needs:</p>
+        <h2 id="services-title">Digital Studio</h2>
+        <p id="services-description">Unlock the potential of digital innovation with our comprehensive Digital Studio services. From concept to execution, we offer a full spectrum of solutions tailored to your unique needs:</p>
         <ul>
             <li><strong>Custom Software Development:</strong> Crafted solutions that precisely fit your requirements.</li>
             <li><strong>Mobile and Full-Stack Applications:</strong> Expert development for seamless user experiences.</li>
@@ -55,14 +102,14 @@
     </section>
 
     <section id="products">
-        <h2>Our Products</h2>
-        <p>Exciting releases coming soon! Follow our updates on <a href="https://twitter.com/edenhall_sro">Twitter</a>.</p>
+        <h2 id="products-title">Our Products</h2>
+        <p id="products-description">Exciting releases coming soon! Follow our updates on <a href="https://twitter.com/edenhall_sro">Twitter</a>.</p>
         <p>Stay tuned as we prepare to unveil groundbreaking products that redefine the standards of excellence in the digital landscape.</p>
     </section>
 
     <footer>
         <div class="company-info">
-            <p>edenhall s.r.o. IČO: 14437341, Jankovcova 1535/2A, Holešovice (Praha 7), 170 00 Praha Czechia EU</p>
+            <p id="footer-text">edenhall s.r.o. IČO: 14437341, Jankovcova 1535/2A, Holešovice (Praha 7), 170 00 Praha Czechia EU</p>
         </div>
     </footer>
 </body>
