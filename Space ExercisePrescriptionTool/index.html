@@ -55,6 +55,13 @@
 
         #output {
             margin-top: 20px;
+            text-align: center;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -62,7 +69,7 @@
 
 <div class="container">
     <h1>Space Exercise Prescription Tool</h1>
-    <p>Prescribe personalized exercise routines for astronauts to maintain health in space.</p>
+    <p>Prescribe personalized exercise routines for astronauts to maintain health in different gravity environments.</p>
     <form id="exerciseForm">
         <label for="muscleMass">Muscle Mass (minutes):</label>
         <input type="number" id="muscleMass" required>
@@ -73,30 +80,65 @@
         <label for="cardioHealth">Cardiovascular Health (minutes):</label>
         <input type="number" id="cardioHealth" required>
 
+        <label for="gravity">Select Gravity Environment:</label>
+        <select id="gravity" required>
+            <option value="1">Earth Gravity</option>
+            <option value="0.17">Moon Gravity</option>
+            <option value="0.38">Mars Gravity</option>
+            <!-- Add more options for other environments as needed -->
+        </select>
+
         <button type="submit">Generate Exercise Routine</button>
     </form>
 
     <div id="output"></div>
+    <div id="errorMessage" class="error-message" style="display: none;"></div>
 </div>
 
 <script>
     document.getElementById('exerciseForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
+        // Get input values
         const muscleMass = parseInt(document.getElementById('muscleMass').value);
         const boneDensity = parseInt(document.getElementById('boneDensity').value);
         const cardioHealth = parseInt(document.getElementById('cardioHealth').value);
+        const gravity = parseFloat(document.getElementById('gravity').value);
 
-        const totalMinutes = muscleMass + boneDensity + cardioHealth;
+        // Validate input values
+        if (isNaN(muscleMass) || isNaN(boneDensity) || isNaN(cardioHealth)) {
+            displayErrorMessage('Please enter valid numbers for all fields.');
+            return;
+        }
 
+        // Calculate adjusted exercise time based on gravity
+        const adjustedMuscleMass = muscleMass / gravity;
+        const adjustedBoneDensity = boneDensity / gravity;
+        const adjustedCardioHealth = cardioHealth / gravity;
+        const adjustedTotalMinutes = (muscleMass + boneDensity + cardioHealth) / gravity;
+
+        // Display exercise routine
+        displayExerciseRoutine(adjustedMuscleMass, adjustedBoneDensity, adjustedCardioHealth, adjustedTotalMinutes);
+    });
+
+    // Function to display error message
+    function displayErrorMessage(message) {
+        const errorMessageElement = document.getElementById('errorMessage');
+        errorMessageElement.textContent = message;
+        errorMessageElement.style.display = 'block';
+    }
+
+    // Function to display exercise routine
+    function displayExerciseRoutine(adjustedMuscleMass, adjustedBoneDensity, adjustedCardioHealth, adjustedTotalMinutes) {
         let output = '<h2>Exercise Routine</h2>';
-        output += '<p>Muscle Mass: ' + muscleMass + ' minutes</p>';
-        output += '<p>Bone Density: ' + boneDensity + ' minutes</p>';
-        output += '<p>Cardiovascular Health: ' + cardioHealth + ' minutes</p>';
-        output += '<p>Total Exercise Time: ' + totalMinutes + ' minutes</p>';
+        output += '<p>Muscle Mass: ' + adjustedMuscleMass.toFixed(2) + ' minutes</p>';
+        output += '<p>Bone Density: ' + adjustedBoneDensity.toFixed(2) + ' minutes</p>';
+        output += '<p>Cardiovascular Health: ' + adjustedCardioHealth.toFixed(2) + ' minutes</p>';
+        output += '<p>Total Exercise Time: ' + adjustedTotalMinutes.toFixed(2) + ' minutes</p>';
 
         document.getElementById('output').innerHTML = output;
-    });
+        document.getElementById('errorMessage').style.display = 'none'; // Hide error message if any
+    }
 </script>
 
 </body>
