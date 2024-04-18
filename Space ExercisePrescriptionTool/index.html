@@ -63,6 +63,13 @@
             text-align: center;
             margin-top: 10px;
         }
+
+        .article-section {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
     </style>
 </head>
 <body>
@@ -82,17 +89,53 @@
 
         <label for="gravity">Select Gravity Environment:</label>
         <select id="gravity" required>
-            <option value="9.81">Earth Gravity</option>
-            <option value="1.62">Moon Gravity</option>
-            <option value="3.71">Mars Gravity</option>
-            <!-- Add more options for other environments as needed -->
-        </select>
+    <option value="9.81">Earth Gravity (Sea Level)</option>
+    <option value="9.78">Earth Gravity (Underwater - Average Ocean Depth)</option>
+    <option value="9.79">Earth Gravity (Underwater - Mariana Trench)</option>
+    <option value="1.62">Moon Gravity</option>
+    <option value="3.71">Mars Gravity</option>
+    <option value="24.79">Mercury Gravity</option>
+    <option value="8.87">Venus Gravity</option>
+    <option value="1.12">Ceres Gravity</option>
+    <option value="1.62">Vesta Gravity</option>
+    <option value="0.28">Jupiter Gravity</option>
+    <option value="0.82">Saturn Gravity</option>
+    <option value="0.37">Uranus Gravity</option>
+    <option value="0.88">Neptune Gravity</option>
+    <option value="0.04">Pluto Gravity</option>
+    <option value="0.06">Eris Gravity</option>
+    <option value="9.52">Titan Gravity (Satellite of Saturn)</option>
+    <option value="1.35">Ganymede Gravity (Satellite of Jupiter)</option>
+    <option value="0.38">Europa Gravity (Satellite of Jupiter)</option>
+    <option value="0.25">Io Gravity (Satellite of Jupiter)</option>
+    <option value="0.13">Callisto Gravity (Satellite of Jupiter)</option>
+    <option value="0.06">Triton Gravity (Satellite of Neptune)</option>
+    <option value="1.51">Enceladus Gravity (Satellite of Saturn)</option>
+    <option value="0.38">Miranda Gravity (Satellite of Uranus)</option>
+    <option value="0.02">Dione Gravity (Satellite of Saturn)</option>
+    <option value="0.04">Mimas Gravity (Satellite of Saturn)</option>
+    <option value="0.07">Ariel Gravity (Satellite of Uranus)</option>
+    <option value="0.05">Titania Gravity (Satellite of Uranus)</option>
+    <option value="0.02">Umbriel Gravity (Satellite of Uranus)</option>
+    <option value="0.02">Tethys Gravity (Satellite of Saturn)</option>
+    <option value="0.005">Amalthea Gravity (Satellite of Jupiter)</option>
+</select>
+
 
         <button type="submit">Generate Exercise Routine</button>
     </form>
 
     <div id="output"></div>
     <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+    <!-- Article Sections -->
+    <div class="article-section">
+        <h2>Exercise Physiology and Countermeasures</h2>
+        <p><strong>Staying Fit in Microgravity</strong></p>
+        <p>Spaceflight affects the human body in numerous ways. NASA researchers are particularly interested in characterizing how changes in physical fitness impact an astronaut’s ability to perform critical mission tasks. As missions increase in duration, the risks of reduced fitness, including muscle and bone loss, and cardiovascular deconditioning, also increases. As a result, understanding how exercise, alone or in combination with other therapies, can mitigate these changes is critical for future human long-duration missions to Mars.</p>
+        <!-- Add more content from the article as needed -->
+    </div>
+
 </div>
 
 <script>
@@ -119,10 +162,6 @@
 
         // Display exercise routine
         displayExerciseRoutine(adjustedMuscleMass, adjustedBoneDensity, adjustedCardioHealth, adjustedTotalMinutes);
-
-        // Calculate spatial distance from gravitational objects in kilometers
-        const spatialDistance = calculateSpatialDistance(gravity);
-        displaySpatialDistance(spatialDistance);
     });
 
     // Function to display error message
@@ -142,30 +181,6 @@
 
         document.getElementById('output').innerHTML = output;
         document.getElementById('errorMessage').style.display = 'none'; // Hide error message if any
-    }
-
-    // Function to calculate spatial distance from gravitational objects in kilometers
-    function calculateSpatialDistance(gravity) {
-        // Use a constant gravitational acceleration for calculations
-        const G = 6.674 * Math.pow(10, -11); // Gravitational constant in m^3/kg/s^2
-
-        // Assume average mass and radius of Earth
-        const M = 5.972 * Math.pow(10, 24); // Mass of Earth in kg
-        const R = 6371 * 1000; // Radius of Earth in meters
-
-        // Calculate distance from surface of the gravitational object
-        const distance = Math.sqrt((G * M) / (gravity * gravity));
-
-        // Convert distance from meters to kilometers
-        const distanceKm = distance / 1000;
-
-        return distanceKm;
-    }
-
-    // Function to display spatial distance
-    function displaySpatialDistance(spatialDistance) {
-        const outputElement = document.getElementById('output');
-        outputElement.innerHTML += '<p>Spatial Distance from Gravitational Object: ' + spatialDistance.toFixed(2) + ' km</p>';
     }
 </script>
 
