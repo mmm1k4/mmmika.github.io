@@ -82,9 +82,9 @@
 
         <label for="gravity">Select Gravity Environment:</label>
         <select id="gravity" required>
-            <option value="1">Earth Gravity</option>
-            <option value="0.17">Moon Gravity</option>
-            <option value="0.38">Mars Gravity</option>
+            <option value="9.81">Earth Gravity</option>
+            <option value="1.62">Moon Gravity</option>
+            <option value="3.71">Mars Gravity</option>
             <!-- Add more options for other environments as needed -->
         </select>
 
@@ -119,6 +119,10 @@
 
         // Display exercise routine
         displayExerciseRoutine(adjustedMuscleMass, adjustedBoneDensity, adjustedCardioHealth, adjustedTotalMinutes);
+
+        // Calculate spatial distance from gravitational objects in kilometers
+        const spatialDistance = calculateSpatialDistance(gravity);
+        displaySpatialDistance(spatialDistance);
     });
 
     // Function to display error message
@@ -138,6 +142,30 @@
 
         document.getElementById('output').innerHTML = output;
         document.getElementById('errorMessage').style.display = 'none'; // Hide error message if any
+    }
+
+    // Function to calculate spatial distance from gravitational objects in kilometers
+    function calculateSpatialDistance(gravity) {
+        // Use a constant gravitational acceleration for calculations
+        const G = 6.674 * Math.pow(10, -11); // Gravitational constant in m^3/kg/s^2
+
+        // Assume average mass and radius of Earth
+        const M = 5.972 * Math.pow(10, 24); // Mass of Earth in kg
+        const R = 6371 * 1000; // Radius of Earth in meters
+
+        // Calculate distance from surface of the gravitational object
+        const distance = Math.sqrt((G * M) / (gravity * gravity));
+
+        // Convert distance from meters to kilometers
+        const distanceKm = distance / 1000;
+
+        return distanceKm;
+    }
+
+    // Function to display spatial distance
+    function displaySpatialDistance(spatialDistance) {
+        const outputElement = document.getElementById('output');
+        outputElement.innerHTML += '<p>Spatial Distance from Gravitational Object: ' + spatialDistance.toFixed(2) + ' km</p>';
     }
 </script>
 
