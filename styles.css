@@ -155,32 +155,20 @@ footer.dark-mode {
 
 
 body {
-    font-family: 'Roboto', sans-serif;
     line-height: 1.6;
     color: #333;
 }
 
 header {
-    background: #2C3E50;
-    color: #fff;
-    padding: 1rem 0;
-    margin-bottom: 2rem;
 }
 
 nav#left-menu ul {
-    display: flex;
-    list-style: none;
-    padding: 0;
 }
 
 nav#left-menu ul li {
-    margin-right: 1rem;
 }
 
 nav#left-menu ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 700;
 }
 
 main {
@@ -198,13 +186,10 @@ section h2 {
 }
 
 footer {
-    background: #2C3E50;
     color: #fff;
-    text-align: center;
-    padding: 1rem 0;
 }
 
 footer .company-info {
-    margin: 0 auto;
+    
 }
 
