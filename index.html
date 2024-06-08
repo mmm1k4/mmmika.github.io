@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edenhall s.r.o.</title>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+
+    <!-- CSS Reset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+
+    <!-- Milligram CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Add JavaScript for language switching and dynamic content loading -->
+    <script>
+        function switchLanguage(language) {
+            // Language switching logic
+        }
+
+        function loadContent(section, file) {
+            fetch(file)
+                .then(response => response.text())
+                .then(data => document.getElementById(section).innerHTML = data)
+                .catch(error => console.error('Error loading content:', error));
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadContent('blog-posts', 'blog-posts.html');
+            loadContent('apps-list', 'apps-list.html');
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav id="left-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Digital Studio</a></li>
+                <li><a href="#products">Our Products</a></li>
+                <li><a href="#apps">Apps</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h1 id="home-title">Welcome to edenhall s.r.o.</h1>
+            <p id="home-description">Digital Studio</p>
+            <p>At edenhall s.r.o., we create own products and collaborate with businesses of all sizes to create innovative digital solutions that drive success.</p>
+            <p>[Temporary website – Stay tuned for exciting updates coming soon.]</p>
+        </section>
+
+        <section id="about">
+            <h2 id="about-title">About Us</h2>
+            <p id="about-description">We are more than just a startup; Founded with the vision of providing software solutions, edenhall s.r.o. has evolved into a trusted partner for businesses and end users.</p>
+            <p>Our values revolve around creativity, collaboration, and customer satisfaction. We take pride in our ability to turn ideas into reality and deliver solutions.</p>
+        </section>
+
+        <section id="services">
+            <h2 id="services-title">Digital Studio</h2>
+            <p id="services-description">Unlock the potential of digital innovation with our comprehensive Digital Studio services. From concept to execution, we offer a full spectrum of solutions tailored to your unique needs:</p>
+            <ul>
+                <li><strong>Custom Software Development:</strong> Crafted solutions that precisely fit your requirements.</li>
+                <li><strong>Mobile and Full-Stack Applications:</strong> Expert development for seamless user experiences.</li>
+                <li><strong>Digital Transformations:</strong> Innovative strategies to elevate your business in the digital realm.</li>
+            </ul>
+            <p>Whether you're a startup or a mid-sized company, we can help your digital success.</p>
+        </section>
+
+        <section id="products">
+            <h2 id="products-title">Our Products</h2>
+            <p id="products-description">Exciting releases coming soon! Follow our updates on <a href="https://twitter.com/edenhall_sro">Twitter</a>.</p>
+            <p>Stay tuned as we prepare to unveil groundbreaking products that redefine the standards of excellence in the digital landscape.</p>
+        </section>
+
+        <section id="apps">
+            <h2>Apps</h2>
+            <div id="apps-list"></div>
+        </section>
+
+        <section id="blog">
+            <h2>Blog</h2>
+            <div id="blog-posts"></div>
+        </section>
+
+        <section id="contact">
+            <h2 id="contact-title">Contact Us</h2>
+            <p>Feel free to reach out for any inquiries or collaboration opportunities.</p>
+            <address>
+                <p>edenhall s.r.o. IČO: 14437341</p>
+                <p>Jankovcova 1535/2A, Holešovice (Praha 7), 170 00 Praha, Czechia EU</p>
+                <p>Email: <a href="mailto:info@edenhall.com">info@edenhall.com</a></p>
+            </address>
+        </section>
+    </main>
+
+    <footer>
+        <div class="company-info">
+            <p id="footer-text">edenhall s.r.o. IČO: 14437341, Jankovcova 1535/2A, Holešovice (Praha 7), 170 00 Praha Czechia EU</p>
+        </div>
+    </footer>
+</body>
+</html>
