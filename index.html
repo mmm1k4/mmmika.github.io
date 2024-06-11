@@ -93,6 +93,7 @@
 
             .menu-toggle {
                 display: block;
+                padding: 8px;
             }
 
             nav {
@@ -137,10 +138,11 @@
 </head>
 <body>
     <header>
-         <div class="logo">
-            <p onclick="toggleMenu()">edenhall s.r.o.</p>
-         </div>
          <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+         <div class="logo">
+            <p class="title" onclick="toggleMenu()">edenhall s.r.o.</p>
+         </div>
+         
          <nav id="left-menu">
             <ul>
                 <li><a href="#home">Home</a></li>
