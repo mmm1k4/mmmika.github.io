@@ -34,16 +34,30 @@
             loadContent('blog-posts', 'blog-posts.html');
             loadContent('apps-list', 'apps-list.html');
         });
+        function toggleMenu() {
+            const menu = document.getElementById('left-menu');
+            menu.classList.toggle('open');
+        }
     </script>
 
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            padding: 0 1em;
+            padding: 0.5em;
+            overflow-x: hidden; /* Hide horizontal scrollbar */
         }
 
         header {
-            margin-bottom: 2em;
+            margin-bottom: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.5em;
+            cursor: pointer;
         }
 
         nav ul {
@@ -51,6 +65,7 @@
             flex-wrap: wrap;
             list-style-type: none;
             padding: 0;
+            margin: 0;
         }
 
         nav li {
@@ -58,7 +73,7 @@
         }
 
         main section {
-            margin-bottom: 2em;
+            margin-bottom: 1.5em;
         }
 
         footer {
@@ -67,18 +82,49 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                font-size: 0.9em;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            nav.open {
+                display: flex;
+            }
+
             nav ul {
                 flex-direction: column;
-                align-items: flex-start;
+                width: 100%;
             }
 
             nav li {
-                margin-bottom: 0.5em;
-                margin-right: 0;
+                margin: 0;
+                width: 100%;
+                text-align: center;
+                padding: 0.5em 0;
+                border-top: 1px solid #e1e1e1;
             }
 
+            nav li:first-child {
+                border-top: none;
+            }
+        }
+
+        @media (max-width: 480px) {
             body {
-                padding: 0 0.5em;
+                font-size: 0.8em;
+            }
+
+            header {
+                font-size: 0.9em;
             }
         }
     </style>
@@ -86,7 +132,10 @@
 </head>
 <body>
     <header>
-        <nav id="left-menu">
+         <div class="logo">
+            <a href="#home">edenhall s.r.o.</a>
+         </div>
+         <nav id="left-menu">
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About Us</a></li>
