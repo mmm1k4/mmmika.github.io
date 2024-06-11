@@ -81,6 +81,11 @@
             margin-top: 2em;
         }
 
+        .logo {
+            padding: 8px;
+           } 
+    
+
         @media (max-width: 768px) {
             body {
                 font-size: 0.9em;
@@ -133,7 +138,7 @@
 <body>
     <header>
          <div class="logo">
-            <a href="#home">edenhall s.r.o.</a>
+            <p onclick="toggleMenu()">edenhall s.r.o.</p>
          </div>
          <div class="menu-toggle" onclick="toggleMenu()">☰</div>
          <nav id="left-menu">
