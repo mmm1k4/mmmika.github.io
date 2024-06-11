@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>edenhall s.r.o.</title>
 
     <!-- Google Fonts -->
@@ -34,6 +36,54 @@
             loadContent('apps-list', 'apps-list.html');
         });
     </script>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            padding: 0 1em;
+        }
+
+        header {
+            margin-bottom: 2em;
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li {
+            margin-right: 1em;
+        }
+
+        main section {
+            margin-bottom: 2em;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2em;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav li {
+                margin-bottom: 0.5em;
+                margin-right: 0;
+            }
+
+            body {
+                padding: 0 0.5em;
+            }
+        }
+    </style>
+    
 </head>
 <body>
     <header>
