@@ -14,9 +14,12 @@
             min-height: 100vh;
             background-color: #1a1a1a;
             color: #ffffff;
+            margin: 0;
+            transition: background-color 0.3s ease;
         }
         header, footer {
             background-color: #222222;
+            transition: background-color 0.3s ease;
         }
         .menu-toggle {
             display: none;
@@ -27,46 +30,139 @@
         main {
             flex: 1;
         }
+        .menu {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #1a1a1a;
+            width: 100%;
+            height: 100%;
+            padding: 2rem;
+            transform-origin: top right;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            z-index: 10;
+        }
+        .menu.open {
+            transform: scaleX(1);
+        }
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        .menu-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .menu-close {
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: #ffffff;
+            transition: transform 0.2s ease;
+        }
+        .menu-close:hover {
+            transform: scale(1.2);
+        }
+        .menu-items {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .menu-item:hover {
+            transform: translateX(5px);
+        }
+        .menu-item-icon {
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+        .menu-item-text {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #ffffff;
+        }
+        .menu-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .menu-feature {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .menu-feature:hover {
+            transform: translateX(5px);
+        }
+        .menu-feature-icon {
+            font-size: 1.5rem;
+            color: #ffffff;
+        }
+        .menu-feature-text {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #ffffff;
+        }
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
                 font-size: 1.5em;
                 cursor: pointer;
+                z-index: 20;
             }
             .menu-icon {
                 display: block;
                 margin-right: 0.5rem;
+                z-index: 20;
             }
-            nav {
-                display: none;
-            }
-            nav.open {
-                display: flex;
-                flex-direction: column;
-                position: absolute;
-                top: 0;
-                right: 0;
-                background-color: #1a1a1a;
-                width: 100%;
-                z-index: 10;
-                height: 100vh;
+            .menu {
                 padding: 2rem;
             }
-            nav ul {
-                flex-direction: column;
-                text-align: center;
+            .menu-header {
+                margin-bottom: 1.5rem;
+            }
+            .menu-logo {
+                font-size: 1.5rem;
+            }
+            .menu-items {
                 gap: 1rem;
+            }
+            .menu-item {
+                font-size: 1.2rem;
+            }
+            .menu-feature {
+                font-size: 1.2rem;
+            }
+            .menu-close {
+                font-size: 1.3rem;
             }
         }
     </style>
     <script>
         function toggleMenu() {
-            const menu = document.getElementById('left-menu');
+            const menu = document.getElementById('menu');
             menu.classList.toggle('open');
         }
 
         function closeMenu() {
-            const menu = document.getElementById('left-menu');
+            const menu = document.getElementById('menu');
             menu.classList.remove('open');
         }
 
@@ -89,17 +185,6 @@
         <div class="logo text-2xl font-bold">
             <p class="cursor-pointer" onclick="closeMenu()">edenhall s.r.o.</p>
         </div>
-        <nav id="left-menu" class="hidden md:flex md:space-x-4">
-            <ul class="flex space-x-4">
-                <li><a href="#home" class="hover:text-gray-400" onclick="closeMenu()">Home</a></li>
-                <li><a href="#about" class="hover:text-gray-400" onclick="closeMenu()">About Us</a></li>
-                <li><a href="#services" class="hover:text-gray-400" onclick="closeMenu()">Digital Studio</a></li>
-                <li><a href="#products" class="hover:text-gray-400" onclick="closeMenu()">Our Products</a></li>
-                <li><a href="#apps" class="hover:text-gray-400" onclick="closeMenu()">Apps</a></li>
-                <li><a href="#blog" class="hover:text-gray-400" onclick="closeMenu()">Blog</a></li>
-                <li><a href="#contact" class="hover:text-gray-400" onclick="closeMenu()">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main class="max-w-7xl mx-auto p-4">
@@ -150,13 +235,109 @@
             <address>
                 <p>edenhall s.r.o. IČO: 14437341</p>
                 <!--<p>Jankovcova 1535/2A, Holešovice (Praha 7), 170 00 Praha, Czechia EU</p>-->
-                <p>Email: <a href="mailto:edenhall.company@gmail.com" class="text-blue-400">edenhall.company@gmail.com</a></p>
+                <p>Email: <a href="mailto:info@edenhall.com">info@edenhall.company</a></p>
             </address>
         </section>
     </main>
 
-    <footer class="bg-gray-800 p-4 text-center text-sm fixed bottom-0 w-full">
-        <p>edenhall s.r.o. IČO: 14437341, <!-- Jankovcova 1535/2A, Holešovice (Praha 7), 170 00 -->Praha, Czechia EU</p>
+    <footer class="bg-gray-800 text-white py-4 mt-auto">
+        <div class="container mx-auto text-center">
+            <p class="text-sm">&copy; 2024 edenhall s.r.o. IČO: 14437341, Praha, Czechia EU</p>
+        </div>
     </footer>
+
+    <!-- Menu Panel -->
+    <div id="menu" class="menu">
+        <div class="menu-header">
+            <div class="menu-logo cursor-pointer" onclick="closeMenu()">edenhall s.r.o.</div>
+            <div class="menu-close cursor-pointer" onclick="toggleMenu()">✕</div>
+        </div>
+        <div class="menu-items">
+            <div class="menu-item" onclick="closeMenu()">
+                <div class="menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-item-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <div class="menu-item-text">Home</div>
+            </div>
+            <div class="menu-item" onclick="closeMenu()">
+                <div class="menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-item-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <div class="menu-item-text">About Us</div>
+            </div>
+            <div class="menu-item" onclick="closeMenu()">
+                <div class="menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-item-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <div class="menu-item-text">Digital Studio</div>
+            </div>
+            <div class="menu-item" onclick="closeMenu()">
+                <div class="menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-item-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <div class="menu-item-text">Our Products</div>
+            </div>
+            <div class="menu-item" onclick="closeMenu()">
+                <div class="menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-item-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <div class="menu-item-text">Apps</div>
+            </div>
+            <div class="menu-item" onclick="closeMenu()">
+                <div class="menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-item-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <div class="menu-item-text">Blog</div>
+            </div>
+            <div class="menu-item" onclick="closeMenu()">
+                <div class="menu-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-item-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <div class="menu-item-text">Contact</div>
+            </div>
+        </div>
+        <div class="menu-features">
+            <div class="menu-feature" onclick="closeMenu()">
+                <div class="menu-feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-item-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <div class="menu-feature-text">Feature 1</div>
+            </div>
+            <div class="menu-feature" onclick="closeMenu()">
+                <div class="menu-feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-item-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <div class="menu-feature-text">Feature 2</div>
+            </div>
+            <div class="menu-feature" onclick="closeMenu()">
+                <div class="menu-feature-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 menu-item-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                    </svg>
+                </div>
+                <div class="menu-feature-text">Feature 3</div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
+
