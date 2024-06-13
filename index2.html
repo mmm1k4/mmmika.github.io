@@ -9,15 +9,33 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        header, footer {
+            background-color: #222222;
         }
         .menu-toggle {
             display: none;
+        }
+        .menu-icon {
+            display: none;
+        }
+        main {
+            flex: 1;
         }
         @media (max-width: 768px) {
             .menu-toggle {
                 display: block;
                 font-size: 1.5em;
                 cursor: pointer;
+            }
+            .menu-icon {
+                display: block;
+                margin-right: 0.5rem;
             }
             nav {
                 display: none;
@@ -31,10 +49,13 @@
                 background-color: #1a1a1a;
                 width: 100%;
                 z-index: 10;
+                height: 100vh;
+                padding: 2rem;
             }
             nav ul {
                 flex-direction: column;
                 text-align: center;
+                gap: 1rem;
             }
         }
     </style>
@@ -42,6 +63,11 @@
         function toggleMenu() {
             const menu = document.getElementById('left-menu');
             menu.classList.toggle('open');
+        }
+
+        function closeMenu() {
+            const menu = document.getElementById('left-menu');
+            menu.classList.remove('open');
         }
 
         function loadContent(section, file) {
@@ -57,21 +83,21 @@
         });
     </script>
 </head>
-<body class="bg-gray-900 text-gray-100">
-    <header class="flex justify-between items-center p-4 bg-gray-800">
+<body>
+    <header class="flex justify-between items-center p-4">
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <div class="logo text-2xl font-bold">
-            <p class="cursor-pointer" onclick="toggleMenu()">edenhall s.r.o.</p>
+            <p class="cursor-pointer" onclick="closeMenu()">edenhall s.r.o.</p>
         </div>
         <nav id="left-menu" class="hidden md:flex md:space-x-4">
             <ul class="flex space-x-4">
-                <li><a href="#home" class="hover:text-gray-400">Home</a></li>
-                <li><a href="#about" class="hover:text-gray-400">About Us</a></li>
-                <li><a href="#services" class="hover:text-gray-400">Digital Studio</a></li>
-                <li><a href="#products" class="hover:text-gray-400">Our Products</a></li>
-                <li><a href="#apps" class="hover:text-gray-400">Apps</a></li>
-                <li><a href="#blog" class="hover:text-gray-400">Blog</a></li>
-                <li><a href="#contact" class="hover:text-gray-400">Contact</a></li>
+                <li><a href="#home" class="hover:text-gray-400" onclick="closeMenu()">Home</a></li>
+                <li><a href="#about" class="hover:text-gray-400" onclick="closeMenu()">About Us</a></li>
+                <li><a href="#services" class="hover:text-gray-400" onclick="closeMenu()">Digital Studio</a></li>
+                <li><a href="#products" class="hover:text-gray-400" onclick="closeMenu()">Our Products</a></li>
+                <li><a href="#apps" class="hover:text-gray-400" onclick="closeMenu()">Apps</a></li>
+                <li><a href="#blog" class="hover:text-gray-400" onclick="closeMenu()">Blog</a></li>
+                <li><a href="#contact" class="hover:text-gray-400" onclick="closeMenu()">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -80,7 +106,7 @@
         <section id="home" class="mb-8">
             <h1 class="text-4xl font-bold mb-2">Welcome to edenhall s.r.o.</h1>
             <p class="text-lg mb-4">Digital Studio</p>
-            <p>At edenhall s.r.o., we create own products and collaborate with businesses of all sizes to create innovative digital solutions that drive success.</p>
+            <p>At edenhall s.r.o., we create our own products and collaborate with businesses of all sizes to create innovative digital solutions that drive success.</p>
             <p>[Temporary website – Stay tuned for exciting updates coming soon.]</p>
         </section>
 
@@ -129,7 +155,7 @@
         </section>
     </main>
 
-    <footer class="bg-gray-800 p-4 text-center text-sm">
+    <footer class="bg-gray-800 p-4 text-center text-sm fixed bottom-0 w-full">
         <p>edenhall s.r.o. IČO: 14437341, <!-- Jankovcova 1535/2A, Holešovice (Praha 7), 170 00 -->Praha, Czechia EU</p>
     </footer>
 </body>
