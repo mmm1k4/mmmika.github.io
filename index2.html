@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>edenhall s.r.o.</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -30,6 +30,11 @@
                 right: 0;
                 background-color: #1a1a1a;
                 width: 100%;
+                z-index: 10;
+            }
+            nav ul {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -52,13 +57,13 @@
         });
     </script>
 </head>
-<body class="bg-gray-900 text-white">
+<body class="bg-gray-900 text-gray-100">
     <header class="flex justify-between items-center p-4 bg-gray-800">
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <div class="logo">
-            <p class="text-2xl font-bold cursor-pointer" onclick="toggleMenu()">edenhall s.r.o.</p>
+        <div class="logo text-2xl font-bold">
+            <p class="cursor-pointer" onclick="toggleMenu()">edenhall s.r.o.</p>
         </div>
-        <nav id="left-menu" class="flex space-x-4">
+        <nav id="left-menu" class="hidden md:flex md:space-x-4">
             <ul class="flex space-x-4">
                 <li><a href="#home" class="hover:text-gray-400">Home</a></li>
                 <li><a href="#about" class="hover:text-gray-400">About Us</a></li>
@@ -71,7 +76,7 @@
         </nav>
     </header>
 
-    <main class="p-4">
+    <main class="max-w-7xl mx-auto p-4">
         <section id="home" class="mb-8">
             <h1 class="text-4xl font-bold mb-2">Welcome to edenhall s.r.o.</h1>
             <p class="text-lg mb-4">Digital Studio</p>
@@ -124,7 +129,7 @@
         </section>
     </main>
 
-    <footer class="bg-gray-800 p-4 text-center">
+    <footer class="bg-gray-800 p-4 text-center text-sm">
         <p>edenhall s.r.o. IČO: 14437341, <!-- Jankovcova 1535/2A, Holešovice (Praha 7), 170 00 -->Praha, Czechia EU</p>
     </footer>
 </body>
