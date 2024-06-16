@@ -38,6 +38,10 @@
             const menu = document.getElementById('left-menu');
             menu.classList.toggle('open');
         }
+        function toggleDescription(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('collapsed');
+        }
     </script>
 
     <style>
@@ -93,7 +97,14 @@
             background-color: #222;
             z-index: 100;
            } 
-            
+
+        .app-description {
+            display: none;
+        }
+
+        .app-description.collapsed {
+            display: block;
+        }
 
         @media (max-width: 768px) {
             body {
