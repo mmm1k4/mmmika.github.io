@@ -34,6 +34,11 @@
             loadContent('apps-list', '../apps-list.html');
             loadContent('pp', '../privacy-policy-file-manager.html');
         });
+
+        function toggleDescription(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('collapsed');
+        }
     </script>
 </head>
 <body>
