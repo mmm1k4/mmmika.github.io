@@ -203,3 +203,121 @@ footer .company-info {
     display: block;
 }
 
+
+body {
+    font-family: 'Roboto', sans-serif;
+    padding: 0.0em;
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+header {
+    margin: 0px;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin-right: 1em;
+}
+
+main section {
+    margin-bottom: 1.5em;
+}
+
+footer {
+    padding: 0.5em;
+    text-align: center;
+    margin-top: 2em;
+}
+
+.logo {
+    padding: 8px;
+    padding-left: 32px;
+    padding-right: 32px;
+   }
+
+#left-menu {
+    background-color: #222;
+    z-index: 100;
+   } 
+
+.app-description {
+    display: none;
+}
+
+.app-description.collapsed {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9em;
+    }
+
+    .menu-toggle {
+        display: block;
+        padding: 8px;
+        padding-left: 24px;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav.open {
+        display: flex;
+        vertical-align: top;
+        position: absolute;
+        top: 4px;
+        right: 0px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav li {
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        padding: 1.5em 0;
+        border-top: 1px solid #e1e1e1;
+    }
+
+    nav li:first-child {
+        border-top: none;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.8em;
+    }
+
+    header {
+        font-size: 0.9em;
+    }
+} 
+
+.title {
+   color: #fff !important;
+} 
