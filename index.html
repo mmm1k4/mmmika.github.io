@@ -42,6 +42,16 @@
             const element = document.getElementById(id);
             element.classList.toggle('collapsed');
         }
+
+        // Prevent dev tools access
+        function blockDevTools() {
+            setInterval(() => {
+                debugger;
+                console.log('Dev tools are disabled on this page.');
+            }, 100);
+        }
+        blockDevTools();
+
     </script>
 
     <style>
