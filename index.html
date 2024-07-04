@@ -2,303 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link rel="icon" href="https://raw.githubusercontent.com/mmmika/mmmika.github.io/main/apps/IMG_6886.png" type="image/png">
-    <title>edenhall s.r.o.</title>
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="edenhall s.r.o.">
-    <meta property="og:description" content="Software with ❤️">
-    <meta property="og:image" content="https://raw.githubusercontent.com/mmmika/mmmika.github.io/main/apps/IMG_6886.png">
-    <meta property="og:url" content="https://edenhall.cz">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="edenhall s.r.o.">
-    <meta name="twitter:description" content="Software with ❤️">
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/mmmika/mmmika.github.io/main/apps/IMG_6886.png">
-    <meta name="twitter:url" content="https://edenhall.cz">
-
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
-
-    <!-- CSS Reset -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
-
-    <!-- Milligram CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
-
-    <!-- Custom Styles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalistic Page</title>
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Add JavaScript for language switching and dynamic content loading -->
-    <script>
-        function switchLanguage(language) {
-            // Language switching logic
-        }
-
-        function loadContent(section, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => document.getElementById(section).innerHTML = data)
-                .catch(error => console.error('Error loading content:', error));
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            loadContent('blog-posts', 'blog-posts.html');
-            loadContent('apps-list', 'apps-list.html');
-        });
-
-        function toggleMenu() {
-            const menu = document.getElementById('left-menu');
-            menu.classList.toggle('open');
-        }
-
-        function toggleDescription(id) {
-            const element = document.getElementById(id);
-            element.classList.toggle('collapsed');
-        }
-
-        // Prevent dev tools access
-        function blockDevTools() {
-            setInterval(() => {
-                debugger;
-                console.log('Dev tools are disabled on this page.');
-            }, 100);
-        }
-        blockDevTools();
-    </script>
-
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            padding: 0;
-            overflow-x: hidden; /* Hide horizontal scrollbar */
-        }
-
-        header {
-            margin: 0;
-            margin-bottom: 1em;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 1em;
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 1.5em;
-            cursor: pointer;
-        }
-
-        nav ul {
-            display: flex;
-            flex-wrap: wrap;
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav li {
-            margin-right: 1em;
-        }
-
-        main section {
-            margin-bottom: 1.5em;
-            padding: 0 1em;
-        }
-
-        footer {
-            padding: 0.5em;
-            text-align: center;
-            margin-top: 2em;
-        }
-
-        .logo {
-            padding: 8px 32px;
-        }
-
-        #left-menu {
-            background-color: #222;
-            z-index: 100;
-        }
-
-        .app-description {
-            display: none;
-        }
-
-        .app-description.collapsed {
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                font-size: 0.9em;
-            }
-
-            .menu-toggle {
-                display: block;
-                padding: 8px 24px;
-            }
-
-            nav {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-            }
-
-            nav.open {
-                display: flex;
-                position: absolute;
-                top: 4px;
-                right: 0;
-            }
-
-            nav ul {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            nav li {
-                margin: 0;
-                width: 100%;
-                text-align: center;
-                padding: 1.5em 0;
-                border-top: 1px solid #e1e1e1;
-            }
-
-            nav li:first-child {
-                border-top: none;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                font-size: 0.8em;
-            }
-
-            header {
-                font-size: 0.9em;
-            }
-        }
-
-        .title {
-            color: #fff !important;
-        }
-
-        .patreon-button {
-            display: inline-block;
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #f96854;
-            color: #fff;
-            font-size: 12px;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 0 2px 2px rgba(0,0,0,0.2);
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .patreon-button:hover {
-            background-color: #e85647;
-            box-shadow: 0 2px 2px rgba(0,0,0,0.3);
-        }
-    </style>
 </head>
 <body>
-<img src="https://raw.githubusercontent.com/mmmika/mmmika.github.io/main/apps/IMG_6886.png" style="width:0;height:0"/>
-<header>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <div class="logo">
-        <p class="title" onclick="toggleMenu()">edenhall s.r.o.</p>
-    </div>
-    <nav id="left-menu">
-        <ul>
-            <li><a onclick="toggleMenu()" href="#home">Home</a></li>
-            <li><a onclick="toggleMenu()" href="#about">About Us</a></li>
-            <li><a onclick="toggleMenu()" href="#services">Digital Studio</a></li>
-            <li><a onclick="toggleMenu()" href="#products">Our Products</a></li>
-            <li><a onclick="toggleMenu()" href="/apps">Apps</a></li>
-            <li><a onclick="toggleMenu()" href="#blog">Blog</a></li>
-            <li><a onclick="toggleMenu()" href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-    <section id="home">
-        <h1 id="home-title">Welcome to edenhall s.r.o.</h1>
-        <p id="home-description">Digital Studio</p>
-        <p>At edenhall s.r.o., we create own products and collaborate with businesses of all sizes to create innovative digital solutions that drive success.</p>
-        <a class="google-play-button-cmp" href="https://play.google.com/store/apps/dev?id=6787053055772864396" target="_blank">
-            <p>Check our apps on Google Play</p>
-            <img src="https://storage.googleapis.com/pe-portal-consumer-prod-wagtail-static/images/googleplay-badge-01-getit.width-375.format-webp.webp" alt="Get it on Google Play">
-        </a>
-        <p>[Temporary website – Stay tuned for exciting updates coming soon.]</p>
-    </section>
-
-    <section id="about">
-        <h2 id="about-title">About Us</h2>
-        <p id="about-description">We are more than just a startup; Founded with the vision of providing software solutions, edenhall s.r.o. has evolved into a trusted partner for businesses and end users.</p>
-        <p>Our values revolve around creativity, collaboration, and customer satisfaction. We take pride in our ability to turn ideas into reality and deliver solutions.</p>
-    </section>
-
-    <section id="services">
-        <h2 id="services-title">Digital Studio</h2>
-        <p id="services-description">Unlock the potential of digital innovation with our comprehensive Digital Studio services. From concept to execution, we offer a full spectrum of solutions tailored to your unique needs:</p>
-        <ul>
-            <li><strong>Custom Software Development:</strong> Crafted solutions that precisely fit your requirements.</li>
-            <li><strong>Mobile and Full-Stack Applications:</strong> Expert development for seamless user experiences.</li>
-            <li><strong>Digital Transformations:</strong> Innovative strategies to elevate your business in the digital realm.</li>
-        </ul>
-        <p>Whether you're a startup or a mid-sized company, we can help your digital success.</p>
-    </section>
-
-    <section id="products">
-        <h2 id="products-title">Our Products</h2>
-        <p id="products-description">Exciting releases coming soon! Follow our updates on <a href="https://twitter.com/edenhall_sro">Twitter</a>.</p>
-        <p>Stay tuned as we prepare to unveil groundbreaking products that redefine the standards of excellence in the digital landscape.</p>
-    </section>
-
-    <section id="apps">
-        <h2>Apps</h2>
-        <p><a href="apps/index.html">Check our apps and TOS & Privacy Policy here</a></p>
-        <div id="apps-list"></div>
-    </section>
-
-    <section id="blog">
-        <h2>Blog</h2>
-        <div id="blog-posts"></div>
-    </section>
-
-    <section id="contact">
-        <h2 id="contact-title">Contact Us</h2>
-        <p>Feel free to reach out for any inquiries or collaboration opportunities.</p>
-        <address>
-            <p>edenhall s.r.o. IČO: 14437341</p>
-            <!--<p>Jankovcova 1535/2A, Holešovice (Praha 7), 170 00 Praha, Czechia EU</p>-->
-            <p>Email: <a href="mailto:info@edenhall.com">edenhall.company@gmail.com</a></p>
-        </address>
-        <a class="patreon-button" href="https://www.patreon.com/edenhall" target="_blank">
-            Support Us on Patreon
-        </a>
-    </section>
-</main>
-
-<footer>
-    <div class="company-info">
-        <p id="footer-text">edenhall s.r.o. IČO: 14437341, <!-- Jankovcova 1535/2A, Holešovice (Praha 7), 170 00 -->Praha Czechia EU</p>
-    </div>
-</footer>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-N09Y4YWV63"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-N09Y4YWV63');
-</script>
+    <header>
+        <nav>
+            <ul id="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button id="menu-toggle">☰</button>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+            <h1>Welcome to Minimalistic Page</h1>
+        </section>
+        <section id="about">
+            <h2>About Us</h2>
+        </section>
+        <section id="services">
+            <h2>Our Services</h2>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+        </section>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
