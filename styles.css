@@ -1,323 +1,67 @@
-/* Basic styles for the website */
-
-/* Resetting default margins and paddings */
-body, h1, h2, h3, p, ul, li {
+* {
     margin: 0;
     padding: 0;
-}
-
-body {
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
-}
-
-header {
-    background-color: #222;
-    color: #fff;
-    padding: 15px;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a, .title {
-    color: #fff;
-    text-decoration: none;
-}
-
-section {
-    padding: 20px;
-    background-color: #fff;
-    margin-bottom: 20px;
-}
-
-footer {
-    background-color: #222;
-    color: #fff;
-    padding: 15px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-.company-info {
-    text-align: center;
-    font-size: 14px;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    background-color: #f5f5f5;
+    color: #333;
     line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.5s, color 0.5s;
 }
 
 header {
-    background-color: #333;
+    background: #333;
     color: #fff;
-    padding: 1em 0;
-    text-align: center;
+    padding: 1rem;
 }
 
 nav {
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav li {
-    /*display: inline-block;*/
-    margin-right: 20px;
-}
-
-nav a, .title {
-    text-decoration: none;
-    color: #fff;
-    font-weight: 700;
-    font-size: 0.9em;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #88c0d0;
-}
-
-section {
-    padding: 2em;
-}
-
-h1, h2, h3 {
-    color: #333;
-}
-
-h1 {
-    font-size: 2.5em;
-}
-
-h2 {
-    font-size: 2em;
-}
-
-h3 {
-    font-size: 1.8em;
-}
-
-p {
-    color: #555;
-}
-
-footer {
-    background-color: #f8f8f8;
-    padding: 1em 0;
-    text-align: center;
-    color: #333;
-}
-
-.company-info {
-    font-size: 0.8em;
-}
-
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #111;
-    color: #ddd;
-}
-
-header.dark-mode {
-    background-color: #222;
-    color: #fff;
-}
-
-nav a.dark-mode {
-    color: #ddd;
-}
-
-nav a.dark-mode:hover {
-    color: #88c0d0;
-}
-
-footer.dark-mode {
-    background-color: #333;
-    color: #ddd;
-}
-
-
-body {
-    line-height: 1.6;
-    color: #333;
-}
-
-header {
-}
-
-nav#left-menu ul {
-}
-
-nav#left-menu ul li {
-}
-
-nav#left-menu ul li a {
-}
-
-main {
-    padding: 0 2rem;
-}
-
-section {
-    margin-bottom: 3rem;
-}
-
-section h2 {
-    border-bottom: 2px solid #E74C3C;
-    padding-bottom: 0.5rem;
-    margin-bottom: 1rem;
-}
-
-footer {
-    color: #fff;
-}
-
-footer .company-info {
-    
-}
-
-.app-description {
-    display: none;
-}
-
-.app-description.collapsed {
-    display: block;
-}
-
-
-body {
-    font-family: 'Roboto', sans-serif;
-    padding: 0.0em;
-    overflow-x: hidden; /* Hide horizontal scrollbar */
-}
-
-header {
-    margin: 0px;
-    margin-bottom: 1em;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.menu-toggle {
+#menu {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+#menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#menu-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
     display: none;
-    font-size: 1.5em;
     cursor: pointer;
 }
 
-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+main {
+    padding: 2rem;
 }
 
-nav li {
-    margin-right: 1em;
-}
-
-main section {
-    margin-bottom: 1.5em;
-}
-
-footer {
-    padding: 0.5em;
-    text-align: center;
-    margin-top: 2em;
-}
-
-.logo {
-    padding: 8px;
-    padding-left: 32px;
-    padding-right: 32px;
-   }
-
-#left-menu {
-    background-color: #222;
-    z-index: 100;
-   } 
-
-.app-description {
-    display: none;
-}
-
-.app-description.collapsed {
-    display: block;
+section {
+    margin-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
-    body {
-        font-size: 0.9em;
-    }
-
-    .menu-toggle {
-        display: block;
-        padding: 8px;
-        padding-left: 24px;
-    }
-
-    nav {
+    #menu {
         display: none;
         flex-direction: column;
-        width: 100%;
     }
 
-    nav.open {
+    #menu.show {
         display: flex;
-        vertical-align: top;
-        position: absolute;
-        top: 4px;
-        right: 0px;
     }
 
-    nav ul {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    nav li {
-        margin: 0;
-        width: 100%;
-        text-align: center;
-        padding: 1.5em 0;
-        border-top: 1px solid #e1e1e1;
-    }
-
-    nav li:first-child {
-        border-top: none;
+    #menu-toggle {
+        display: block;
     }
 }
-
-@media (max-width: 480px) {
-    body {
-        font-size: 0.8em;
-    }
-
-    header {
-        font-size: 0.9em;
-    }
-} 
-
-.title {
-   color: #fff !important;
-} 
