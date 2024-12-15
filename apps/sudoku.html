@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SudokuEden</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background-color: #4caf50;
+            color: white;
+            padding: 1rem 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .sudoku-container {
+            margin: 1rem;
+            padding: 1rem;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .sudoku {
+            display: grid;
+            grid-template-columns: repeat(9, 30px);
+            grid-gap: 2px;
+            margin: 0 auto;
+        }
+
+        .cell {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            color: #555;
+            background-color: #fff;
+        }
+
+        .cell[contenteditable="true"] {
+            border: 1px solid #4caf50;
+            background-color: #e8f5e9;
+        }
+
+        footer {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #4caf50;
+            color: white;
+            font-size: 0.9rem;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SudokuEden</h1>
+        <p>Created by Edenhall s.r.o.</p>
+    </header>
+
+    <main>
+        <!-- Sudoku Puzzle 1 -->
+        <div class="sudoku-container">
+            <h2>Puzzle 1</h2>
+            <div class="sudoku">
+                <!-- Example filled puzzle cells -->
+                <div class="cell">5</div>
+                <div class="cell">3</div>
+                <div class="cell" contenteditable="true"></div>
+                <div class="cell" contenteditable="true"></div>
+                <div class="cell">7</div>
+                <div class="cell" contenteditable="true"></div>
+                <div class="cell" contenteditable="true"></div>
+                <div class="cell" contenteditable="true"></div>
+                <div class="cell">2</div>
+
+                <!-- Remaining cells can be similarly added. Placeholder rows shown for brevity -->
+                <!-- You would repeat this to complete the 9x9 grid -->
+                <div class="cell" contenteditable="true"></div>
+                <div class="cell" contenteditable="true"></div>
+                <!-- More cells go here -->
+            </div>
+        </div>
+
+        <!-- Sudoku Puzzle 2 -->
+        <div class="sudoku-container">
+            <h2>Puzzle 2</h2>
+            <div class="sudoku">
+                <!-- Example empty puzzle -->
+                <div class="cell" contenteditable="true"></div>
+                <div class="cell" contenteditable="true"></div>
+                <div class="cell">8</div>
+                <div class="cell" contenteditable="true"></div>
+                <div class="cell">4</div>
+                <div class="cell" contenteditable="true"></div>
+                <div class="cell" contenteditable="true"></div>
+                <div class="cell" contenteditable="true"></div>
+                <div class="cell">6</div>
+                <!-- Repeat cells to form a 9x9 grid -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SudokuEden by Edenhall s.r.o.</p>
+    </footer>
+</body>
+</html>
